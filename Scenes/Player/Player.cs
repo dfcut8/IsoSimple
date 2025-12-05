@@ -43,7 +43,7 @@ public partial class Player : CharacterBody2D
         {
             if (Velocity.Length() > (friction * delta))
             {
-                Velocity = Velocity.Normalized() * (friction * delta);
+                Velocity -= Velocity.Normalized() * (friction * delta);
             }
             else
             {
@@ -51,7 +51,7 @@ public partial class Player : CharacterBody2D
             }
         }
 
-        Velocity = IsometricMovement(direction * acceleration * delta);
+        Velocity += IsometricMovement(direction * acceleration * delta);
         MoveAndSlide();
     }
 }
