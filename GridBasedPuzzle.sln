@@ -1,12 +1,15 @@
-﻿Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 18
+VisualStudioVersion = 18.0.11222.15 d18.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GridBasedPuzzle", "GridBasedPuzzle.csproj", "{B0A7A9F5-FDA2-4579-9091-3324D0808702}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-	Debug|Any CPU = Debug|Any CPU
-	ExportDebug|Any CPU = ExportDebug|Any CPU
-	ExportRelease|Any CPU = ExportRelease|Any CPU
+		Debug|Any CPU = Debug|Any CPU
+		ExportDebug|Any CPU = ExportDebug|Any CPU
+		ExportRelease|Any CPU = ExportRelease|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{B0A7A9F5-FDA2-4579-9091-3324D0808702}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -15,5 +18,11 @@ Global
 		{B0A7A9F5-FDA2-4579-9091-3324D0808702}.ExportDebug|Any CPU.Build.0 = ExportDebug|Any CPU
 		{B0A7A9F5-FDA2-4579-9091-3324D0808702}.ExportRelease|Any CPU.ActiveCfg = ExportRelease|Any CPU
 		{B0A7A9F5-FDA2-4579-9091-3324D0808702}.ExportRelease|Any CPU.Build.0 = ExportRelease|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {12E207E6-3135-447E-A37F-D5FFB8DE0182}
 	EndGlobalSection
 EndGlobal

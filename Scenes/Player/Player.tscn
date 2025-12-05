@@ -1,10 +1,39 @@
-[gd_scene load_steps=3 format=3 uid="uid://dgbv2x4xfnl0q"]
+[gd_scene load_steps=6 format=3 uid="uid://dgbv2x4xfnl0q"]
 
 [ext_resource type="Script" uid="uid://bfk8ktvohuvwp" path="res://Player.cs" id="1_ft8w5"]
 [ext_resource type="Texture2D" uid="uid://r003edwp4vhi" path="res://Assets/Textures/Player.png" id="2_h54ih"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ft8w5"]
+radius = 6.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ft8w5"]
+size = Vector2(13, 20)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_h54ih"]
 
 [node name="Player" type="CharacterBody2D" unique_id=591681957]
 script = ExtResource("1_ft8w5")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1484410280]
 texture = ExtResource("2_h54ih")
+hframes = 8
+vframes = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2130208765]
+position = Vector2(0, 6)
+shape = SubResource("CircleShape2D_ft8w5")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=876685776]
+
+[node name="Sword" type="Area2D" parent="." unique_id=1218109686]
+position = Vector2(12, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sword" unique_id=1737807809]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_ft8w5")
+
+[node name="HurtBox" type="Area2D" parent="." unique_id=25244638]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox" unique_id=921364030]
+shape = SubResource("CircleShape2D_h54ih")
+debug_color = Color(0.90528923, 0.2123448, 0.5542069, 0.41960785)
