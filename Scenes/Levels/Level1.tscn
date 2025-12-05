@@ -5,3 +5,6 @@
 [node name="Level1" type="Node2D" unique_id=1103298273]
 
 [node name="Player" parent="." unique_id=591681957 instance=ExtResource("1_5jgm0")]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1129897666]
+zoom = Vector2(4, 4)
