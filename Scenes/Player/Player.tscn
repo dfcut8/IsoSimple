@@ -31,6 +31,7 @@ position = Vector2(12, 0)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sword" unique_id=1737807809]
 position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_ft8w5")
+disabled = true
 
 [node name="HurtBox" type="Area2D" parent="." unique_id=25244638]
 
