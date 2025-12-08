@@ -8,7 +8,7 @@ public partial class Player : CharacterBody2D
     private const float friction = 400.0f;
 
     [Export]
-    public int Speed = 70;
+    private int speed = 70;
 
     private Vector2 direction = Vector2.Zero;
 
@@ -36,7 +36,7 @@ public partial class Player : CharacterBody2D
 
         if (direction != Vector2.Zero)
         {
-            Velocity = Velocity.LimitLength(Speed);
+            Velocity = Velocity.LimitLength(speed);
         }
 
         if (direction == Vector2.Zero)
