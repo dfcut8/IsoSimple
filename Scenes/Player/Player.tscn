@@ -1,10 +1,13 @@
-[gd_scene load_steps=24 format=3 uid="uid://dgbv2x4xfnl0q"]
+[gd_scene load_steps=25 format=3 uid="uid://dgbv2x4xfnl0q"]
 
 [ext_resource type="Script" uid="uid://bfk8ktvohuvwp" path="res://Scenes/Player/Player.cs" id="1_ft8w5"]
 [ext_resource type="Texture2D" uid="uid://r003edwp4vhi" path="res://Assets/Textures/Player.png" id="2_h54ih"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ft8w5"]
 radius = 6.0
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_ft8w5"]
+states/Start/position = Vector2(199.2, 100)
 
 [sub_resource type="Animation" id="Animation_6tu5v"]
 resource_name = "AttackDownLeft"
@@ -598,12 +601,18 @@ script = ExtResource("1_ft8w5")
 texture = ExtResource("2_h54ih")
 hframes = 8
 vframes = 16
+frame = 104
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2130208765]
 position = Vector2(0, 6)
 shape = SubResource("CircleShape2D_ft8w5")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=876685776]
+[node name="AnimationTree" type="AnimationTree" parent="." unique_id=1633052110]
+tree_root = SubResource("AnimationNodeStateMachine_ft8w5")
+anim_player = NodePath("AnimationPlayer")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimationTree" unique_id=876685776]
+root_node = NodePath("../..")
 libraries/ = SubResource("AnimationLibrary_h54ih")
 autoplay = &"IdleDownRight"
 
@@ -611,7 +620,7 @@ autoplay = &"IdleDownRight"
 position = Vector2(12, 0)
 
 [node name="SwordCollider" type="CollisionShape2D" parent="Sword" unique_id=1737807809]
-position = Vector2(-1, 4)
+position = Vector2(-6, -3)
 shape = SubResource("RectangleShape2D_ft8w5")
 disabled = true
 
