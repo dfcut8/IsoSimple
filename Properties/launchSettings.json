@@ -1,0 +1,11 @@
+{
+  "profiles": {
+    "Game:Debug": {
+      "commandName": "Executable",
+      "executablePath": "C:\\Applications\\Godot4.Net\\Godot_v4.6-dev5_mono_win64.exe",
+      "commandLineArgs": "--path . --verbose",
+      "workingDirectory": ".",
+      "nativeDebugging": false
+    }
+  }
+}
