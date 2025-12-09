@@ -10,13 +10,17 @@ public partial class Player : CharacterBody2D
     [Export]
     private int speed = 70;
 
+    // Nodes and states
     private AnimationTree animationTree;
+    private AnimationNodeStateMachinePlayback animationStateMachine;
 
     private Vector2 direction = Vector2.Zero;
 
     public override void _Ready()
     {
         animationTree = GetNode<AnimationTree>("AnimationTree");
+        animationStateMachine = (AnimationNodeStateMachinePlayback)
+            animationTree.Get("parameters/playback");
     }
 
     public override void _Process(double delta)
@@ -43,6 +47,8 @@ public partial class Player : CharacterBody2D
 
         if (direction != Vector2.Zero)
         {
+            UpdateAnimationState(direction);
+            animationStateMachine.Travel("Move");
             Velocity = Velocity.LimitLength(speed);
         }
 
@@ -54,11 +60,19 @@ public partial class Player : CharacterBody2D
             }
             else
             {
+                animationStateMachine.Travel("Idle");
                 Velocity = Vector2.Zero;
             }
         }
 
         Velocity += IsometricMovement(direction * acceleration * delta);
         MoveAndSlide();
+    }
+
+    private void UpdateAnimationState(Vector2 direction)
+    {
+        animationTree.Set("parameters/Idle/blend_position", direction);
+        animationTree.Set("parameters/Move/blend_position", direction);
+        animationTree.Set("parameters/Attack/blend_position", direction);
     }
 }
