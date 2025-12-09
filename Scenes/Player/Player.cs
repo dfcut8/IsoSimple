@@ -48,6 +48,7 @@ public partial class Player : CharacterBody2D
         if (direction != Vector2.Zero)
         {
             UpdateAnimationState(direction);
+            GD.Print("Moving");
             animationStateMachine.Travel("Move");
             Velocity = Velocity.LimitLength(speed);
         }
@@ -60,6 +61,7 @@ public partial class Player : CharacterBody2D
             }
             else
             {
+                GD.Print("Idling");
                 animationStateMachine.Travel("Idle");
                 Velocity = Vector2.Zero;
             }
