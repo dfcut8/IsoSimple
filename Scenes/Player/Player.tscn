@@ -644,10 +644,11 @@ position = Vector2(0, 6)
 shape = SubResource("CircleShape2D_ft8w5")
 
 [node name="AnimationTree" type="AnimationTree" parent="." unique_id=1633052110]
+reset_on_save = false
 tree_root = SubResource("AnimationNodeStateMachine_ft8w5")
 anim_player = NodePath("../AnimationPlayer")
 parameters/Attack/blend_position = Vector2(0, 0)
-parameters/Idle/blend_position = Vector2(0.23264611, -0.3896551)
+parameters/Idle/blend_position = Vector2(0.18659794, -0.53103447)
 parameters/Move/blend_position = Vector2(0, 0)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=876685776]

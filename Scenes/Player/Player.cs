@@ -10,7 +10,14 @@ public partial class Player : CharacterBody2D
     [Export]
     private int speed = 70;
 
+    private AnimationTree animationTree;
+
     private Vector2 direction = Vector2.Zero;
+
+    public override void _Ready()
+    {
+        animationTree = GetNode<AnimationTree>("AnimationTree");
+    }
 
     public override void _Process(double delta)
     {
